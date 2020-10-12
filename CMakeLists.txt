@@ -29,6 +29,7 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 
 file(GLOB sources
   "${PROJECT_SOURCE_DIR}/include/HWRK/*.h"
-  "${PROJECT_SOURCE_DIR}/src/*.c")
+  "${PROJECT_SOURCE_DIR}/src/*.c"
+  "${PROJECT_SOURCE_DIR}/test/*.test")
 
 add_executable(HWRK ${sources})

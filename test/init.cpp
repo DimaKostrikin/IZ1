@@ -5,6 +5,6 @@ extern "C" {
 }
 
 TEST(init, ok) {
-    FILE *test_in = fopen("../test/test_is_url.txt", "r");
+    FILE *test_in = fopen("test_is_url.test", "r");
     ASSERT_EQ(init(test_in), 1);
 }
