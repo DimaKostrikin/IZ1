@@ -14,5 +14,5 @@ foreach(file ${tests})
     ${file}
     "${PROJECT_SOURCE_DIR}/test/main.cpp")
   target_link_libraries("${name}_tests" gtest_main)
-  add_test(NAME ${name} COMMAND "${name}_tests")
+  add_test(NAME ${name} COMMAND "${name}_tests" WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/Resources")
 endforeach()
