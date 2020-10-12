@@ -114,11 +114,11 @@ int init(FILE *stream) {
     char **res_vect = NULL;
     int num_of_urls = filter((const char**)vect_of_strings, &num_of_lines, &res_vect);
     printf("%d\n", num_of_urls);
-    for (int i = 0; i < num_of_urls; ++i) {  // В отдельную функцию
+    for (int i = 0; i < num_of_urls; ++i) {
         printf("%s\n", res_vect[i]);
     }
 
-    for (int i = 0; i < num_of_lines; ++i {
+    for (int i = 0; i < num_of_lines; ++i) {
         free(vect_of_strings[i]);
     }
     free(vect_of_strings);
@@ -126,7 +126,7 @@ int init(FILE *stream) {
     for (int i = 0; i < num_of_urls; ++i) {
         free(res_vect[i]);
     }
-    free(res_vect[i]);
+    free(res_vect);
 
     return num_of_urls;
 }
