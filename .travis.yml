@@ -1,7 +1,7 @@
 dist:     trusty    # используем Ubuntu 14.04 Trusty Tahr (а не 12.02 Precise Pangolin)
 sudo:     required  # используем Virtual Machine (а не Docker container)
 
-language: cpp       # на практике разницы между специфичным для C++ окружением
+language: c       # на практике разницы между специфичным для C++ окружением
                     # и, скажем, python -- никакой. Но пусть будет cpp.
 
 os:
