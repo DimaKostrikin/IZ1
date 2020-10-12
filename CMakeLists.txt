@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.3)
 
 project(HWRK)
 
+set(CMAKE_C_STANDARD 99)
+
 ##
 ### Test definitions ###
 ##
