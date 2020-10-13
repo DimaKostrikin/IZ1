@@ -32,7 +32,7 @@ char *read_string(FILE *stream) {
         c = getc(stream);
     }
     string[lenght_of_string] = '\0';
-
+    temp = NULL;
     return string;
 }
 
