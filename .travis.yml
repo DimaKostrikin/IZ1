@@ -44,10 +44,7 @@ script:
     - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
     - cmake --build .
     - ctest --output-on-failure
-    - gcovr -r /build # Gcovr вывод покрытия тестами
-    - ls
-    - cd ..
-    - ls
+    - gcovr -r. # Gcovr вывод покрытия тестами
 
 deploy:
     # выкладываем tagged-коммиты на GitHub Releases:
