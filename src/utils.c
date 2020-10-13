@@ -15,24 +15,23 @@ char *read_string(FILE *stream) {
     }
 
     char c = getc(stream);
-    char *temp = NULL;
     int lenght_of_string = 0;
 
     while (c != '\n') {
         string[lenght_of_string++] = c;
         if (lenght_of_string >= size_of_buffer) {
             size_of_buffer *= 2;
-            temp = (char*)realloc(string, size_of_buffer * sizeof(char));
+            char *temp = (char*)realloc(string, size_of_buffer * sizeof(char));
             if (!temp) {
                 free(string);
                 fprintf(stderr, "Allocation error.");
                 return NULL;
             }
+            string = temp;
         }
         c = getc(stream);
     }
     string[lenght_of_string] = '\0';
-    temp = NULL;
     return string;
 }
 
