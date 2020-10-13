@@ -46,6 +46,8 @@ script:
     - ctest --output-on-failure
     - gcovr -r /build # Gcovr вывод покрытия тестами
     - ls
+    - cd ..
+    - ls
 
 deploy:
     # выкладываем tagged-коммиты на GitHub Releases:
