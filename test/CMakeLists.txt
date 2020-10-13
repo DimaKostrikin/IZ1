@@ -8,14 +8,14 @@ list(REMOVE_ITEM tests "${PROJECT_SOURCE_DIR}/test/main.cpp")
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/test/cmake_modules)
 
-if(CMAKE_COMPILER_IS_GNUCXX)
+
     include(CodeCoverage CMAKE_MODULE_PATH)
     SETUP_TARGET_FOR_COVERAGE_LCOV(
         NAME coverage                 # New target name
         EXECUTABLE ctest -C ${ROOT_DIR}/CTestTestfile.cmake # Executable in PROJECT_BINARY_DIR
         DEPENDENCIES ${Boost_LIBRARIES}         # Dependencies to build first
 )
-endif()
+
 
 APPEND_COVERAGE_COMPILER_FLAGS()
 
