@@ -12,3 +12,7 @@ _deps
 *_tests
 googletest*
 HWRK
+*.base
+*.capture
+*.total
+coverage/
