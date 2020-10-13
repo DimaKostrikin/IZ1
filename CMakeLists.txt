@@ -14,10 +14,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
 if(CMAKE_COMPILER_IS_GNUCXX)
     include(CodeCoverage)
     link_libraries(gcov)
+    APPEND_COVERAGE_COMPILER_FLAGS()
 endif()
-
-APPEND_COVERAGE_COMPILER_FLAGS()
-
 
 configure_file(CMakeLists.txt.in
         googletest-download/CMakeLists.txt)
