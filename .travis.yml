@@ -48,7 +48,7 @@ script:
     - ctest --output-on-failure
     - gcovr -r.. # Gcovr вывод покрытия тестами
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all ctest; fi
-    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cppcheck --error-exitcode=1 --enable=warning,performance,information,style  ../test/*.cpp ../src/*.c ../include/IZ1; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cppcheck --error-exitcode=1 --enable=warning,performance,information,style  ../test/*.cpp ../src/*.c ../include/HWRK/*.h; fi
 
 deploy:
     # выкладываем tagged-коммиты на GitHub Releases:
