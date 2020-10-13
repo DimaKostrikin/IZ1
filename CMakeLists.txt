@@ -11,9 +11,10 @@ include(CTest)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
 
-include(CodeCoverage)
-
-link_libraries(gcov)
+if(CMAKE_COMPILER_IS_GNUCXX)
+    include(CodeCoverage)
+    link_libraries(gcov)
+endif()
 
 APPEND_COVERAGE_COMPILER_FLAGS()
 
