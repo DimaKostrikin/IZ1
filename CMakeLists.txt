@@ -5,6 +5,7 @@ set(${TARGET_NAME} HWRK)
 project(HWRK)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 14)
 
 #coverage
 if(CMAKE_BUILD_TYPE STREQUAL "coverage" OR CODE_COVERAGE)
