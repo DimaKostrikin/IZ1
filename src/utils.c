@@ -47,7 +47,7 @@ int filter(const char **vect_of_strings, const int *num_of_lines, char ***res_ve
 
     int number_res = 0;
     char **res = NULL;
-    res = (char**)calloc(0, sizeof(char*));
+    res = (char**)calloc(1, sizeof(char*));
     char **temp = NULL;
     int j = 0;
 

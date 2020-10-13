@@ -33,7 +33,7 @@ matrix:
         - os:  osx
           env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
-          os: osx
+        - os: osx
           script: gcovr -r..
 install:
     # скрипт настройки среды и установки зависимостей:

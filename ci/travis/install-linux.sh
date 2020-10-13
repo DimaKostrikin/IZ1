@@ -7,6 +7,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 sudo apt-get install gcc
 sudo apt-get install gcovr
 sudo apt-get install -y lcov
+sudo apt-get install -y cppcheck
 
 CMAKE_VERSION=3.3.2
 CMAKE_VERSION_DIR=v3.3

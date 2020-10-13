@@ -11,11 +11,13 @@ include(CTest)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
 
-if(CMAKE_COMPILER_IS_GNUCXX)
+if(CMAKE_COMPILER_IS_GNUCXX) # Покрытие кода.
     include(CodeCoverage)
     link_libraries(gcov)
     APPEND_COVERAGE_COMPILER_FLAGS()
 endif()
+
+set(CMAKE_CXX_CPPLINT "/usr/bin/cppcheck;--std=c++11")
 
 configure_file(CMakeLists.txt.in
         googletest-download/CMakeLists.txt)
