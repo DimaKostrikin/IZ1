@@ -4,6 +4,21 @@ project(HWRK)
 
 set(CMAKE_C_STANDARD 99)
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+    include(CodeCoverage CMAKE_MODULE_PATH)
+    SETUP_TARGET_FOR_COVERAGE_LCOV(
+        NAME coverage                 # New target name
+        EXECUTABLE ctest -C ${ROOT_DIR}/CTestTestfile.cmake # Executable in PROJECT_BINARY_DIR
+        DEPENDENCIES ${Boost_LIBRARIES}         # Dependencies to build first
+)
+endif()
+
+APPEND_COVERAGE_COMPILER_FLAGS()
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+    link_libraries(gcov)
+endif()
+
 ##
 ### Test definitions ###
 ##
