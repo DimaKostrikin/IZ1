@@ -14,16 +14,6 @@ compiler:
     - gcc
     - clang
 
-addons:
-  apt:
-    packages:
-      - valgrind
-      - cppcheck
-      - make
-      - cmake
-      - lcov
-      - gcov
-
 env:
     # список переменных окружения, влияющих на матрицу сборки:
     - TARGET_CPU=amd64 BUILD_CONFIGURATION=Debug
