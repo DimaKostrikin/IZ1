@@ -63,6 +63,7 @@ int filter(const char **vect_of_strings, const int *num_of_lines, char ***res_ve
                 fprintf(stderr, "Allocation error.");
                 return -1;
             }
+            res = temp;
 
             res[j] = (char*)calloc(strlen(vect_of_strings[i]) + 1, sizeof(char));
             if (!res[j]) {
@@ -88,7 +89,7 @@ int init(FILE *stream) {
     printf("Введите количество строк:\n");
     int num_of_lines = 0;
 
-    int err = fscanf(stream, "%d", &num_of_lines);
+    int err = fscanf(stream, "%100d", &num_of_lines);
     getc(stream);  // Scanf выдает в stdin \n. Считываем его.
     if (!err || num_of_lines < 0) {
         return -1;
