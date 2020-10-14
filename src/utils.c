@@ -16,12 +16,12 @@ char *read_string(FILE *stream) {
 
     char c = getc(stream);
     int lenght_of_string = 0;
-
+    char *temp = NULL;
     while (c != '\n') {
         string[lenght_of_string++] = c;
         if (lenght_of_string >= size_of_buffer) {
             size_of_buffer *= 2;
-            char *temp = (char*)realloc(string, size_of_buffer * sizeof(char));
+            temp = (char*)realloc(string, size_of_buffer * sizeof(char));
             if (!temp) {
                 free(string);
                 fprintf(stderr, "Allocation error.");
