@@ -46,7 +46,7 @@ script:
     - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
     - cmake --build .
     - ctest --output-on-failure
-    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then gcovr -r.. # Gcovr вывод покрытия тестами
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then gcovr -r..; fi # Gcovr вывод покрытия тестами
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then valgrind --error-exitcode=1 --leak-check=full --show-leak-kinds=all ctest; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cppcheck --error-exitcode=1 --enable=warning,performance,information,style  ../test/*.cpp ../src/*.c ../include/HWRK/*.h; fi
 
